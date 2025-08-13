@@ -98,6 +98,7 @@ import Shimmer from "./Shimmer";
 import "../RestroMenu.css"
 import { useParams } from "react-router-dom";
 import useRestroMenu from "../utils/useRestroMenu";
+import RestroCategory from "./RestroCategory";
 
 const RestroMenu = () => {
   //const [restroMenu, setRestroMenu] = useState(null);
@@ -128,17 +129,20 @@ const RestroMenu = () => {
     return <h2>Menu details not available</h2>;
   }
 
-  const { name, cuisines, costForTwoMessage, avgRating, city, locality } = info;
+  const { name, cuisines,  city, locality } = info;
 
   // ✅ Find groupedCard data
   const menuCards =
-    restroMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards ;
-    let allItems=[]
-    menuCards.forEach((section)=>{
-        const items = section?.card?.card?.itemCards || []
-        allItems=[...allItems, ...items]
-    })
-    console.log("All Items:", allItems)
+    restroMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((section)=>
+    section?.card?.card?.title && section?.card?.card?.itemCards) ||[] ;
+    console.log(menuCards)
+    // let allItems=[]
+    // menuCards.forEach((section)=>{
+    //     const items = section?.card?.card?.itemCards || []
+    //     allItems=[...allItems, ...items]
+    // })
+    
+    // console.log("All Items:", allItems)
 
 
   // ✅ Collect all itemCards from all sections
@@ -147,26 +151,32 @@ const RestroMenu = () => {
   //console.log("itemCards:", itemCards);
 
   return (
-    <div>
-      <h1><strong>{name}</strong></h1>
+    <div >
+      <div className="Menu-info">
+        <h1><strong> *************  {name}  *************</strong></h1>
       <h4>{cuisines?.join(", ")}</h4>
-      <h3>
+      {/* <h3>
         {costForTwoMessage}, ⭐{avgRating}
-      </h3>
+      </h3> */}
       <h5>
         {locality}, {city}
       </h5>
 
-      <h2>Menu</h2>
-      <ul className="menu-list">
-        {allItems.map((item) => (
-          <li >
-            {item.card.info.name} - ₹
-            {item.card.info.price / 100 || item.card.info.defaultPrice / 100}  
-          </li>
+
+      </div>
+      
+     
+      <ul className="menu-list"> <h2>Menu</h2>
+        {menuCards.map((section) => (
+          <RestroCategory  data={{title: section.card.card.title,
+                                  items:section.card.card.itemCards
+          }}/>
+         
          
         ))}
       </ul>
+     
+      
     </div>
   );
 };

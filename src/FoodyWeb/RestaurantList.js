@@ -16,7 +16,7 @@ function RestaurantList() {
   useEffect(() => {
     axios
       .get(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING#"
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.3862327&lng=76.9572233&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       )
       .then((response) => {
         const cards = response.data?.data?.cards || [];
@@ -116,7 +116,6 @@ function RestaurantList() {
       <div className="boxes">
         {restaurants.map((item) => {
           const cardindex = item.info.id;
-          console.log(cardindex)
           const info = item.info || {};
           const img = info.cloudinaryImageId
             ? `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${info.cloudinaryImageId}`
@@ -128,11 +127,13 @@ function RestaurantList() {
           const cuisines =
             info.cuisines?.join(", ") || "Cuisines not available";
           const rating = info.avgRating || "N/A";
+          const totalRating= info.totalRatingsString || "N/A"
+ 
           const cost =
             info.costForTwo || info.costForTwoString || "₹ — for two";
           const deleivery = info?.sla?.slaString || "N/A";
-          const lacality = info?.locality || "N/A";
-          const nearBy = info?.areaName || "N/A";
+          const lacality = info?.locality|| "N/A";
+          const nearBy = info?.areaName|| "N/A";
 
           return (
             <Link
@@ -151,6 +152,7 @@ function RestaurantList() {
                 time={deleivery}
                 place={lacality}
                 near={nearBy}
+                rating={totalRating}
               />
             </Link>
           );
@@ -159,6 +161,7 @@ function RestaurantList() {
     </div>
   );
 }
+
 
 export default RestaurantList;
 

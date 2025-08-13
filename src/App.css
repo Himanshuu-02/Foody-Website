@@ -11,8 +11,12 @@
 .header{
   display: flex;
   width: 100%;
-  border: 1px solid black;
+  height: 158px;
+  /* border: 1px solid black; */
   justify-content: space-between;
+  background-color: #9fe3ac;
+  box-shadow: 1px 1px 10px #010101;
+  position: sticky;
 }
 .logo img{
       width: 217px;
@@ -26,7 +30,8 @@ li{
 .navbar{
   
       margin-right: 128px;
-    margin-top: 17px;
+   
+
 }
 ul{
     display: flex;
@@ -71,8 +76,8 @@ li:hover{
 
 .card {
  
-  width: 450px;             
-            
+  width: 450px;            
+ height: 512px;        
   border-radius: 10px;
   /* border: 1px solid #ddd; */
   background: #fff;

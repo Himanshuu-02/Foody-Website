@@ -1,0 +1,152 @@
+/* ===== General Container ===== */
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  /* animation: fadeIn 1s ease-in; */
+}
+
+.about-container h1 {
+      font-size: 3.5rem;
+    color: #ff6f61;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.about-container .intro {
+      font-size: 1.7rem;
+    text-align: center;
+    line-height: 2.4;
+    margin-bottom: 66px;
+    color: #555;
+}
+
+/* ===== Sections ===== */
+.about-section {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  /* animation: slideUp 0.8s ease-in-out; */
+}
+
+.about-section h2 {
+     color: #ff6f61;
+    margin-bottom: 24px;
+    font-size: 2.9rem;
+}
+
+.about-section p,
+.about-section ul {
+  font-size: 1.6rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.about-section ul li {
+  margin-bottom: 8px;
+}
+
+/* ===== Stats Section ===== */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: linear-gradient(135deg, #ff6f61, #ff9a8b);
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 200px;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  animation: fadeInUp 1s ease;
+}
+
+.stat:hover {
+  transform: scale(1.05);
+}
+
+.stat h3 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.stat p {
+  font-size: 1rem;
+}
+
+/* ===== Testimonials ===== */
+.testimonial-section {
+  background: #fff7f5;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.testimonial-section h2 {
+  margin-bottom: 20px;
+  color: #ff6f61;
+}
+
+.testimonial {
+  max-width: 600px;
+  margin: 0 auto;
+  font-style: italic;
+  font-size: 1.8rem;
+  color: #555;
+  position: relative;
+  animation: fadeSlide 0.8s ease-in-out;
+}
+
+.testimonial p {
+  margin-bottom: 10px;
+}
+
+.testimonial h4 {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat {
+    width: 80%;
+  }
+}

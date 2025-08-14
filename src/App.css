@@ -36,9 +36,10 @@ li{
 ul{
     display: flex;
     justify-content: space-around;
-    gap: 150px;
+    gap: 50px;
     font-size: 30px;
     padding: 30px;
+    text-align: end;
 }
 li:hover{
   color: blue;
@@ -49,7 +50,7 @@ li:hover{
   
 }
 
-@media only screen and (max-width: 455px){
+/* @media only screen and (max-width: 455px){
   ul {
       flex-wrap: wrap;
     gap: 27px;
@@ -64,7 +65,7 @@ li:hover{
     border: none;
 
   }
-}
+} */
 .boxes {
       display: flex;
     flex-wrap: wrap;
@@ -149,7 +150,7 @@ li:hover{
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease;
-    margin-left: 58%;
+    margin-left: 50%;
 }
 
 
@@ -194,7 +195,7 @@ li:hover{
 }
 
 
-@media only screen and (max-width: 455px) {
+/* @media only screen and (max-width: 455px) {
   .bar {
     width: 90%;                 
     height: 55px;
@@ -209,9 +210,9 @@ li:hover{
     padding: 12px 16px;
     font-size: 16px;
   }
-}
+} */
 
-@media only screen and (max-width: 455px){
+/* @media only screen and (max-width: 455px){
   .boxes{
     flex-direction: column;
     align-items: center;
@@ -224,7 +225,7 @@ li:hover{
     padding: -16px;
    }
 
-}
+} */
   
 
 .card button{
@@ -255,6 +256,7 @@ li:hover{
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease;
 }
 
+
 .price{
       font-size: 33px;
     color: green;
@@ -281,6 +283,27 @@ li:hover{
     box-shadow: 1px 1px 10px #212121;
     box-sizing: content-box;
 }
+/* @media only screen and (max-width: 455px) {
+  .filter-btn{
+        width: 103px;
+    height: 67px;
+    /* margin-top: 16px; 
+    padding: 16px;
+    position: absolute;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-top: 8px;
+    font-size: 11px;
+
+  }
+  .select{
+    width: 65px;
+  }
+  .price{
+    margin-right: 10px;
+  }
+  
+} */
 
 
 .star-box{
@@ -312,3 +335,155 @@ li:hover{
     justify-content: center; 
 
  }  */
+
+ /* ✅ Keep your original styles above */
+
+/* =========================
+   MOBILE RESPONSIVE TWEAKS
+   ========================= */
+@media only screen and (max-width: 768px) {
+  /* HEADER */
+  .header {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+
+  ul {
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 20px;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .navbar {
+    margin-right: 0;
+  }
+
+  /* SEARCH BAR */
+  .bar {
+    width: 95%;
+    height: auto;
+    flex-direction: row;
+    margin: 15px auto;
+  }
+
+  .bar input {
+    font-size: 16px;
+    padding: 10px;
+    font-weight: bolder;
+  }
+
+  .bar button {
+    padding: 22px 14px;
+    font-size: 16px;
+  }
+
+  /* FILTERS */
+  .container-filter {
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .filter-btn {
+    padding: 10px;
+    margin: 5px;
+    font-size: 14px;
+    width: auto;
+    font-weight: bolder;
+  }
+
+  .select {
+    font-size: 14px;
+    padding: 8px;
+    margin: 5px;
+  }
+
+  /* CARDS */
+  .boxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  
+  }
+
+  .card-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .Detail {
+    padding: 15px;
+    white-space: normal;
+    text-overflow: unset;
+  }
+
+  .card button {
+    font-size: 18px;
+    height: 50px;
+  }
+
+  /* PRICE & STAR BOX */
+  .price {
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  .star-box {
+    width: 55px;
+    height: 23px;
+    /* padding: 5px 10px; */
+    font-size: 12px;
+  }
+
+  /* LOGIN BUTTON */
+  .login {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .whole-container{
+    margin: 42px;
+  }
+}
+
+/* 📱 EXTRA SMALL SCREENS (Phones under 480px) */
+@media only screen and (max-width: 480px) {
+  ul {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .bar {
+    flex-direction: column;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .bar button {
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .card button {
+    font-size: 16px;
+  }
+}

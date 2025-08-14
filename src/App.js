@@ -11,6 +11,9 @@ import Footer from "./FoodyWeb/Footer";
 import RestroMenu from "./FoodyWeb/RestroMenu";
 import Shimmer from "./FoodyWeb/Shimmer";
 import "./index.css"
+import {Provider} from "react-redux"
+import appStore from "./utils/appStore";
+import Cart from "./FoodyWeb/Cart";
 // function App() {
 //   const[activeSection,setActiveSection]= useState('home')
 //   const handleNavigation=(section)=>{
@@ -31,12 +34,15 @@ const Services= lazy(()=>import("./FoodyWeb/Services"))
 function App() {
   
   return (
-    <div className="App">
+    <Provider store={appStore}>
+      <div className="App">
       <Headers />
       <Outlet/>
       {/* <SearchBar/>  */}
       {/*<RestaurantList />*/}
     </div>
+    </Provider>
+    
   );
 }
 export const appRouter = createBrowserRouter([
@@ -59,6 +65,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/services",
         element:  <Suspense fallback={<Shimmer/>}><Services/></Suspense>,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/contact",

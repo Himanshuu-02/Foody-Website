@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../Footer.css";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import UserContext from "../utils/userContext";
 
 function Footer() {
+  const {loggedinUser}= useContext(UserContext)
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -15,13 +18,13 @@ function Footer() {
         </div>
 
         <div className="footer-section contact">
-          <h3>Contact Us</h3>
-          <p>📧 Email: support@foody.com</p>
+          <h3>Contact Us : (CEO - {loggedinUser})</h3>
+          <p>📧 Email: support@foody.com </p>
           <p>📞 Phone: +91 98765 43210</p>
           <p>📍 Address: Sector 17, Gurgaon, Haryana</p>
         </div>
 
-        <div className="footer-section-social">
+        <div className="footer-section social" style={{marginLeft:"50%"}}>
           <h3>Follow Us</h3>
           <div className="social-icons">
             <a href="#"><FaFacebookF /></a>

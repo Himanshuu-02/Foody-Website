@@ -135,7 +135,7 @@ const RestroMenu = () => {
   const menuCards =
     restroMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((section)=>
     section?.card?.card?.title && section?.card?.card?.itemCards) ||[] ;
-    console.log(menuCards)
+    // console.log(menuCards)
     // let allItems=[]
     // menuCards.forEach((section)=>{
     //     const items = section?.card?.card?.itemCards || []
@@ -166,10 +166,12 @@ const RestroMenu = () => {
       </div>
       
      
-      <ul className="menu-list"> <h2>Menu</h2>
+      <ul className="menu-list" > <h2>Menu</h2>
         {menuCards.map((section) => (
+          
           <RestroCategory  data={{title: section.card.card.title,
-                                  items:section.card.card.itemCards
+                                  items:section.card.card.itemCards,
+                                  
           }}/>
          
          

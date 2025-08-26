@@ -60,7 +60,7 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog />,
+        element: <Blog/>
       },
       {
         path: "/services",

@@ -14,21 +14,27 @@ function RestaurantList() {
   const [priceFilter, setPriceFilter] = useState("");
 
   useEffect(() => {
+    
     axios
       .get(
+        // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.3862327&lng=76.9572233&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+
+
+        //new
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.3862327&lng=76.9572233&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+
       )
       .then((response) => {
         const cards = response.data?.data?.cards || [];
         let extracted = [];
-        console.log(cards);
+        // console.log(cards);
 
         cards.forEach((c) => {
           const arr = c.card?.card?.gridElements?.infoWithStyle?.restaurants;
-          console.log(arr);
+          // console.log(arr);
           if (Array.isArray(arr)) extracted = [...extracted, ...arr];
         });
-        console.log("Extracted Restaurants:", extracted);
+        // console.log("Extracted Restaurants:", extracted);
 
         setAllRestaurants(extracted); // ✅ save original data
         setRestaurants(extracted); // ✅ also set UI list initially
@@ -142,8 +148,9 @@ function RestaurantList() {
               to={"/restaurant/" + cardindex}
             >
               <Body
-                // key={cardindex}
+                key={cardindex}
                 //  links={link}
+
                 resName={name}
                 cusine={cuisines}
                 cardRate={rating}

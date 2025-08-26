@@ -48,10 +48,10 @@ function Headers() {
  // const [buttonReact, setButtonReact] = useState("login");
   const onlineStatus= useStatus()
   const {loggedinUser}= useContext(UserContext)
-   console.log(loggedinUser)
+  //  console.log(loggedinUser)
 //subscribing to the store using the selector
 const cartItems= useSelector((store)=>store.cart.items)
-console.log(cartItems)
+// console.log(cartItems)
   return (
     <div>
       <div className="header">

@@ -249,7 +249,8 @@ li:hover{
     align-items: center;
     left: 40%;
     margin-left: 2%;
-    border-radius: 30px;
+   border-top-left-radius: 30px;
+   border-bottom-right-radius: 30px
 }
 .filter-btn:hover{
   background-color: green;

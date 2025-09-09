@@ -78,7 +78,7 @@ function RestaurantList() {
   };
   const onlineStatus= useStatus()
   if(onlineStatus===false){
-    return (<h1 style={{textAlign:"center"}}>You are offline :)...Please check your internet connection</h1>
+    return (<h1 style={{textAlign:"center", marginTop:"30%"}}>You are offline :)...Please check your internet connection</h1>
     
     )
   }

@@ -4,8 +4,8 @@ import { useRouteError } from "react-router-dom";
 const Eroor = () => {
   const err = useRouteError();
   return (
-    <div >
-      <center style={{marginTop: "20%"}}>
+    <div  style={{marginTop: "40%"}}>
+      <center style={{marginTop: "40%"}}>
         <h1>Oops</h1>
         <h2>Something went wrong</h2>
         <h1>

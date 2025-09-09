@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "../Footer.css";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import {  FaInstagram,  FaLinkedinIn, FaGithub } from "react-icons/fa";
 import UserContext from "../utils/userContext";
 
 function Footer() {
@@ -24,13 +24,12 @@ function Footer() {
           <p>📍 Address: Sector 17, Gurgaon, Haryana</p>
         </div>
 
-        <div className="footer-section social" style={{marginLeft:"50%"}}>
+        <div className="footer-section social" style={{marginLeft:"41%"}}>
           <h3>Follow Us</h3>
           <div className="social-icons">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaLinkedinIn /></a>
+            <a href="https://www.instagram.com/iamhimanshuu_0?igsh=MTR6OTdyYmZkbmg3Nw=="><FaInstagram /></a>
+            <a href="https://www.linkedin.com/in/himanshu-sharma-533b42287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedinIn /></a>
+            <a href="https://github.com/Himanshuu-02"><FaGithub /></a>
           </div>
         </div>
       </div>
